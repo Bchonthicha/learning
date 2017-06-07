@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title> test div-class </title>
+
+        <style>
+      
+div{background-color: royalblue}
+    .myspansttye_1 {background-color:blueviolet ;color:oldlace}
+    .myspansttye_2 {background-color:darkslategray ;color:darkgoldenrod}
+    .myspansttye_3{background-color:bisque ;color:darkturquoise}
+
+    </style>
+</head>
+
+<body>
+<script src ="jquery-3.2.1.js"> </script>
+
+    <div id ="1" class="myspansttye_1" >aaaa ss</div>
+    <div id ="2" class="myspansttye_1">bbbb ss</div>
+    <div id ="3" class="myspansttye_2" >cccc
+    <span id ="A" class="myspansttye_3" >dddd</span> 
+    </div>
+    <span id ="B" class="myspansttye_1" >eeee ss</span> 
+    <p id ="C" class="myspansttye_1" >gggg</p> 
+    <script>
+      $("div.myspansttye_1").css("background-color"," red");
+    </script>
+</body>
+</html>

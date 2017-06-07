@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Plus - Minus </title>
+
+    </head>
+
+    <body>
+        <script src ="jquery-3.2.1.js"> </script>
+       <form  name='frmtest'>
+         <div>  <input type="text" id="tb1" size="6px" value="1" style=background-color:lightskyblue > </div>
+         </br>
+         <div> <input type="button" id="btn1" value="+ " style=font-size:20px> 
+        <input type="button" id="btn2" value=" - " style=font-size:20px>  </div>
+       </form>
+
+        <script>
+            var one = document.frmtest.tb1.value;
+            //    alert(one);
+            var oneNew =parseInt(one);
+            var op = -1 ;
+//..
+            $("#btn1").click(function(){
+              if(oneNew <10){       //เมื่อค่าไม่ถึง 11
+                   // alert("บวก");
+                    console.log("บวกกกก");
+                    var ans=oneNew+1;
+                   // alert(ans);
+                    $("#tb1").val(ans);
+                    oneNew=ans;
+              } else{
+                  var ans=oneNew+1;
+                        console.log("เกิน");
+                        $("#tb1").hide();
+                         oneNew=ans;
+                     
+              }
+            });
+
+            $("#btn2").click(function(){
+                if(oneNew <10){       //เมื่อค่าไม่ถึง 11
+                  //  alert("ลบ");
+                    console.log("ลบบบ");
+                    var ans=oneNew-1;
+                  //  alert(ans);
+                    $("#tb1").val(ans);
+                    oneNew=ans;
+              } else{
+                    $("#tb1").show();
+                  var ans=oneNew-1;
+                  //  alert(ans);
+                    $("#tb1").val(ans);
+                    oneNew=ans;
+                        console.log("เกิน");
+              }    
+            });    
+
+
+        </script>
+       <!-- <p> Hello </p>
+        <script>
+            $("p").hide(); 
+            console.log ("hide");
+            $("p").show(); 
+            console.log("show");
+        </script>-->
+    </body>
+</html>

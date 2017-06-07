@@ -1,0 +1,58 @@
+<html>
+<head>
+    <script src ="jquery-3.2.1.js"> </script>
+    <script>
+     
+//1..............................Add
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits);
+fruits[6] = "Lemon";  //insert an array 
+///fruits.insert([8], "coconut"); 
+console.log(fruits); 
+var array = ['foo', 'bar', 1, 2, 3],
+    
+    // insert string 'someString' into the array at index 2
+
+        //---ใช้ลบและเพิ่มข้อมูลเข้าไปในตำแหน่งที่กำหนด 
+        //---splice ( index, count, value0, value1, ..., valuen );
+        //---ตัวแปร index คือตำแหน่งที่ต้องการเพิ่มหรือลบข้อมูล ,ตัวแปร count คือจำนวนข้อมูลที่ต้องการลบ ,ตัวแปร value คือข้อมูลที่จะเพิ่มเข้าไป
+        insertAtIndex = 2,
+        stringToBeInserted = 'someString';
+        console.log(array); 
+
+      //  array.splice( insertAtIndex, 0, stringToBeInserted );    
+        array.splice( 2, 0, "Me" );     //เพิ่ม array ตำแหน่งใดๆ  //index =2
+        console.log(array); 
+
+        fruits.push("apple");           //ใช้เพิ่มข้อมูลลงใน array ในลำดับสุดท้าย
+        fruits.unshift ("pear");        //ใช้เพิ่มข้อมูลลงใน array ในลำดับแรก
+
+ //2..............................delete
+        myArray = ['a', 'b', 'c', 'd'];
+        //delete myArray[1];
+        //  or
+        myArray.splice (1, 1);          //ลบ array ตำแหน่งใดๆ 
+        console.log(myArray);
+
+        alert ( myArray.pop() );        //ใช้ดึงข้อมูลในลำดับสุดท้ายออกจาก array
+        alert ( myArray.shift() );      //ใช้ดึงข้อมูลในลำดับแรกสุดของ array ออกมา
+
+//3..............................concat
+//----concat ( array_object ); ใช้รวม array 2 ตัว ให้เป็น array ตัวเดียว
+        var arr01 = new Array ( "bamboo", "labcode" );
+                console.log(arr01); 
+        var arr02 = new Array ( "panda", "thailand" );
+                console.log(arr02); 
+        var arr03 = arr01.concat ( arr02 );
+                console.log(arr03);
+
+  alert( arr03.toLocaleString());       //ใช้แสดงข้อมูลใน array
+
+///http://code.function.in.th/javascript/array
+      </script>
+
+</body>
+
+
+
+</html>
