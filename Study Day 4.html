@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src ="jquery-3.2.1.js"> </script>
+</head>
+
+<body>
+    <script>
+ 
+//data seriacation and de-seriacation
+    //-แปลง ob เป็น string แล้วแปลงstring เป็นobj
+//1 seriacation
+var obj8 ={"user":"A","talk":function(){console.log("Hello");}};
+var obj9 ={"name ":"AAA","age":"20","tickets":["QR","St","RS"]};  
+console.log(obj8);
+
+var str1= JSON.stringify(obj8);
+console.log(str1);
+
+console.log(obj9);
+var str2=JSON.stringify(obj9);
+console.log(JSON.stringify(obj9));
+
+//2 de-seriacation
+var r01=JSON.parse(str1);
+console.log(r01);
+
+var r02=JSON.parse(str2);
+console.log(r02);
+</script>
+<?php echo date('l, F jS, Y'); ?>
+</body>
+
+
+
+</html>

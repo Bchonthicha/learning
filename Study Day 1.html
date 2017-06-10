@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title> test </title>
+
+<!--<script type="text/javascript">
+     function A(){
+      alert("Heyy");
+        console.log("step01");
+        document.title="112"; //title 
+        console.log("step02");
+        document.getElementById("1").innerText = "xx";
+        console.log("step03");
+        document.getElementById("2").innerText = "xy";
+        console.log("step04");
+    }
+</script> -->
+    <style>
+      
+    div{background-color: royalblue}
+    .myspansttye {background-color:blueviolet ;color:brown}
+    .myspansttye {background-color:chocolate ;color:brown}
+    </style>
+</head>
+
+<body>
+<div id ="1" style="background-color:blueviolet ;color:brown">1234 </div>
+<div id ="2" class="myspansttye">3333</div>
+<div id ="3" class="myspansttye">3333
+<span id ="A" class="myspansttye">5555</span> 
+
+</div>
+    <script>
+   // alert("Hello world");
+
+    function A(){
+        console.log("step1");
+        document.title="112"; //title 
+        console.log("step2");
+        document.getElementById("1").innerText = "xx";
+        console.log("step3");
+        document.getElementById("2").innerText = "xy";
+        console.log("step4");
+      B(10,"x");
+      }
+
+      function B(x,y){
+        console.log(x+y);
+      }
+      function C(z){
+          return z+1;
+      }
+      //--------------------------------------------------
+    /*  function B1(x:number,y:number){
+          console.log(x+y);
+      }*/
+
+      //invocation
+      //A();
+      var myfunc =A;
+      myfunc();
+      //-----
+      //other 1
+      var myfunc2 =function(){
+          console.log("ddd");
+      } ;
+      myfunc2();
+      //other 2
+    ( function (){
+          console.log("ee");
+      })();
+
+    ( function (a,b){
+         // console.log(a+"hhhh"+b);
+         console.log(a+b);
+      })(1,2);
+
+      //ทำไม่ได้ 
+      /* var myfunc3 =( function (){
+          console.log("ee");
+      })();
+    myfunc3();
+*/
+
+
+var square = new Function ( "x", "return x * x" );  //แบบสั้น
+//alert ( square ( 3 ) );
+</script>
+</body>
+<script src ="jquery-3.2.1.js"> 
+
+//test jquery
+//document.getElementById()..
+
+</script>
+
+<script>
+ 
+/*
+function A(){
+        console.log("step1");
+        document.title="112"; //title  //set
+        console.log("step2");
+        document.getElementById("1").innerText = "xx";
+        console.log("step3");
+        document.getElementById("2").innerText = "xy";
+        console.log("step4");
+        //console.log(document.getElementById("2").innerText);  get
+      }*/
+
+
+      //1 getelementbyID()
+  // $("#1").text("zzz");  //setter
+//    $("#1").text()
+    console.log($("#1").text());    //getter
+
+    var jqdiv1 =  $("#1"); 
+    //jqdiv1.text("SSSSSS");
+    console.log(jqdiv1.text());    //getter
+  //  $("div").text("dddd");
+$(".myspansttye").text("ee");
+
+
+$(".myspansttye").css("background-color"," red");
+
+    </script>
+</html>

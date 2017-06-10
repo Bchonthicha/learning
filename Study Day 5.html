@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src ="jquery-3.2.1.js"> </script>
+</head>
+<body>
+
+
+<div id = "mybutton" style="cursor:pointer">CLICK ME</div>
+<script>
+    $("#mybutton").click(function(){
+        console.log("CLICK");
+        //var u1={"name":"Z","role":"admin"};
+        $.get("test51.php?uname=Z&role=addmin",function(d,s,xhr){
+            console.log("xxx");
+            console.log(d);
+            console.log(s);
+        });
+   //
+    //post
+
+
+    $.post("test51.php?uname=Z&role=addmin",function(d,s,xhr){
+            console.log("yyy");
+            console.log(d);
+            console.log(s);
+        });
+
+            var u1={"name":"Z","role":"admin"};
+            var u1_str=JSON.stringify(u1);
+
+    $.post("test51.php?uname=Z&role=addmin",u1_str
+    ,function(d,s,xhr){
+            console.log("qqqq");
+            console.log(d);
+            console.log(s);
+            var re_u = JSON.parse(d);
+               console.log(re_u);
+        });
+    });
+ 
+    
+    </script>
+</body>
+</html>

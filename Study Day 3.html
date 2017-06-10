@@ -1,0 +1,209 @@
+<html>
+<head>
+    <script src ="jquery-3.2.1.js"> </script>
+    <script>
+       /* console.log("1");
+          $(document).ready(function(){
+            console.log("2");
+          });
+         console.log("3"); */
+    
+    </script>
+</head>
+
+<body>
+    <div id ="id1" class="myspansttye_1" >aaaa</div>
+    <div id ="id2" class="myspansttye_1">bbbb</div>
+    <div id ="id3" class="myspansttye_2" >cccc
+    <span id ="idA" class="myspansttye_3" >dddd</span> 
+    </div>
+
+arr3: <span id = "A">  </span>
+    <script>
+ 
+          // $("#id1").prepend("hello");
+         //$("#id1").hide();
+
+//----text ( content ) ใช้กำหนดค่า text contents ให้กับ ทุก element ภายใน set
+         //$("#id1").text("Hello, welcome to function.in.th");
+        
+//----text ( function ( index, text ) ) ใช้กำหนดค่า text contents ให้กับ ทุก element ภายใน set
+       /*  $("#id1").text ( function ( index, html ) { 
+	if ( index % 2 == 0 )
+	{
+		return "Welcome to Function.in.th";
+	}else{
+		return "Hello, Welcome to me";
+	}
+} );*/
+
+var num0 =10;
+var num1 =10.1;
+var str="";
+
+var arr0=[];  //1 empty
+var arr1 =[0,1,2]   //2 width init value
+var arr2 =[0,1.2,"1","2"]; //3 muti value
+
+document.getElementById("A").innerHTML =arr2;
+
+//4..
+var arr3 =[];
+for(var i=0;i<10;i++){
+    arr3.push(i);
+}
+console.log(arr3);
+
+//
+arr3[1] ="Hello";
+//console.log(arr3[1]);
+console.log(arr3);
+
+//Obj เริ่มต้น
+//js key value
+var obj0 ={}; //empty opj
+console.log(obj0);
+var obj1 ={"name ":"01","lastname":"02"};  //width init value
+console.log(obj1);
+var obj2 ={"name ":"AA","age":"20"}; //multi value
+var obj3 ={"name ":"AAA","age":"20","tickets":["Q","S","R"]};  
+console.log(obj3);
+//------ add data to obj 1
+var obj4={};
+obj4.name ="BB";
+obj4.age ="20";
+obj4["name"] ="xxx";
+console.log(obj4);
+//------ add data to obj 2
+var obj5={};
+for(var i=0;i<10;i++){
+    obj5["a"+i]=i*2;
+}
+
+console.log(obj5);
+console.log(obj5["a1"]);
+console.log(obj5.a1);
+
+//------ add data to obj 3
+var obj6 ={"name ":"AAA","age":"20","tickets":["QR","St","RS"]};   //เขียนแบบโต้งๆไปเรื่อย
+console.log(obj6);
+
+//--
+console.log("at obj 7");
+var obj7 ={"user":"A","talk":function(){console.log("Hello");}};
+obj7.talk();
+
+obj7["talk"]();
+console.log(obj7.talk);
+/*for (var key in obj7) {
+  console.log((obj7[key]));
+}*/
+
+//---------------------------------- delete member of obj
+var myObject = {
+    "ircEvent": "PRIVMSG",
+    "method": "newURI",
+      "regex": "^http://.*"
+};
+console.log(myObject);
+//delete myObject.regex;
+// or,
+//delete myObject['regex'];
+// or,
+var prop = "regex";
+delete myObject[prop];
+console.log(myObject);
+
+//------------------------------------loop display
+var p = {
+    "p1": "value1",
+    "p2": "value2",
+    "p3": "value3"
+};
+for (var key in p) {
+  if (p.hasOwnProperty(key)) {      //obj.hasOwnProperty(prop)  ใช้กำหนด Property ให้กับ object
+    console.log(key + " -> " + p[key]);
+  }
+}
+
+//--
+for (var key in p) {
+  console.log((p[key]));
+}
+//--
+keys = Object.keys(p);   // ["p1", "p2", "p3"]   //Object.keys(obj)
+
+for(i = 0; i < keys.length; i++){
+  console.log(keys[i] + "=" + p[keys[i]]);   // p1=value1, p2=value2, p3=value3
+}
+
+
+///******
+//-------------------Finding Variable Type in JavaScript
+console.log(Array.isArray(arr3));//==true = array
+console.log(typeof arr3);
+console.log(typeof p);
+
+ console.log(Object.prototype.toString.call({"name ":"01","lastname":"02"}));
+//"[object Array]"
+ console.log(Object.prototype.toString.call([1,2,3]));
+//"[object Array]"
+ console.log(Object.prototype.toString.call("foo bar"));
+//"[object String]"
+ console.log(Object.prototype.toString.call(45));
+//"[object Number]"
+ console.log(Object.prototype.toString.call(false));
+//"[object Boolean]"
+ console.log(Object.prototype.toString.call(new String("foo bar")));
+//"[object String]"
+///******
+
+/*The Difference Between Arrays and Objects
+
+        In JavaScript, arrays use numbered indexes.  
+        In JavaScript, objects use named indexes.
+
+        JavaScript does not support associative arrays.  JavaScript does not support arrays with named indexes.
+            - กลุ่มโครงสร้างข้อมูลหรือแบบชนิดข้อมูลนามธรรม ที่สามารถเข้าถึงข้อมูลได้โดยผ่านข้อมูลอีกตัว เรียกว่า คีย์ (key) 
+        You should use objects when you want the element names to be strings (text).
+        You should use arrays when you want the element names to be numbers.
+
+        "Array" เป็น subclass หรือ sub-prototype ของ "Object" ดังนั้น "Array" สืบทอดคุณสมบัติทั้งหมดจาก "Object"
+        "Array" is not a new data type. "Array" and "Object" are sharing the same data type "object".
+        ตัวดำเนินการ "typeof" ใน"Array" object จะส่งคืน "object".
+        ตัวดำเนินการ "instanceof" บน"Array" object จะจับคู่ "Array"นอกจากนี้ยังตรงกับ "Object" เนื่องจาก "Array" เป็นคลาสย่อยของ "Object"
+
+        An object of "Object" can have indexed properties using the same syntax as "Array" objects.
+            - วัตถุ "Object" สามารถมีคุณสมบัติการจัดทำดัชนีโดยใช้ไวยากรณ์เดียวกับวัตถุ "Array"
+        An object of "Object" is not an object of "Array".
+        An object of "Array" is also an object of "Object".
+*/
+
+
+//--teat4 
+//data seriacation and de-seriacation
+    //-แปลง ob เป็น string แล้วแปลงstring เป็นobj
+//1 seriacation
+var obj8 ={"user":"A","talk":function(){console.log("Hello");}};
+var obj9 ={"name ":"AAA","age":"20","tickets":["QR","St","RS"]};  
+console.log(obj8);
+
+var str1= JSON.stringify(obj8);
+console.log(str1);
+
+console.log(obj9);
+var str2=JSON.stringify(obj9);
+console.log(JSON.stringify(obj9));
+
+//2 de-seriacation
+var r01=JSON.parse(str1);
+console.log(r01);
+
+var r02=JSON.parse(str2);
+console.log(r02);
+</script>
+</body>
+
+
+
+</html>
